@@ -1,0 +1,45 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+
+const {title} = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style>
+
+			@font-face {
+				font-display: swap;
+				font-family: 'Manrope';
+				font-style: normal;
+				font-weight: 300;
+				src: url('/fonts/manrope-v20-latin-300.woff2') format('woff2');
+			}
+            @font-face {
+				font-display: swap;
+				font-family: 'Manrope';
+				font-style: normal;
+				font-weight: 400;
+				src: url('/fonts/manrope-v20-latin-regular.woff2') format('woff2');
+			}
+			@font-face {
+				font-display: swap;
+				font-family: 'Manrope';
+				font-style: normal;
+				font-weight: 700;
+				src: url('/fonts/manrope-v20-latin-700.woff2') format('woff2');
+			}
+    	</style>
+	</head>
+	<body>
+        <Header />
+		<slot><slot/>
+	</body>
+</html>

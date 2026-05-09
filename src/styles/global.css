@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    transition: 0.2s;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & * {
+        display: inherit;
+    }
+}
+
+:root {
+    --white-95: hsla(0, 0%, 100%, .95);
+    --white-60: hsla(0, 0%, 100%, .6);
+    --white-40: hsla(0, 0%, 100%, .4);
+    --dark-90: hsla(0, 0%, 0%, .9);
+
+    --radius: 12px;
+}
+
+.close {
+    gap: 4px;
+}

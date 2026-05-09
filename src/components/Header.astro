@@ -1,0 +1,67 @@
+---
+
+---
+
+<header>
+    <nav class="desktop-nav">
+        <a class="logo-wrap" href="/">
+            <img class="logo" src="/images/logo.svg">
+            Company Name
+        </a>
+        <div class="divider-vert"></div>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+    </nav>
+</header>
+
+<style>
+    header {
+        margin-top: 16px;
+        width: fit-content;
+        height: fit-content;
+        background-color: var(--dark-90);
+        padding: 8px 12px;
+        border-radius: var(--radius);
+        position: fixed;
+    }
+    
+    .desktop-nav {
+        width: fit-content;
+        gap: 12px;
+        align-items: center;
+        a {
+            text-decoration: none;
+            color: var(--white-95);
+            
+            padding: 4px 12px;
+            &:hover {
+                color: var(--white-60)
+            }
+            &.logo-wrap {
+                gap: 12px;
+                padding: 0px 12px 0px 4px;
+                align-items: center;
+                &:hover {
+                    .logo {
+                        filter: brightness(60%);
+                    }
+                }
+            }
+        }
+    }
+
+    .divider-vert {
+        background-color: var(--white-40);
+        height: 90%;
+        width: 1px;
+    }
+
+    .logo {
+        aspect-ratio: 1;
+        height: 28px;
+    }
+
+    
+</style>
