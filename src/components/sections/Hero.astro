@@ -1,0 +1,86 @@
+---
+import PrimaryButton from '../buttons/PrimaryButton.astro';
+import SecondaryButton from '../buttons/SecondaryButton.astro';
+import SmallButton from '../buttons/SmallButton.astro';
+
+const {src} = Astro.props;
+---
+
+<section class="main">
+    
+    <div class="bg-overlay across"></div>
+    <picture>
+        <source srcset={'/images/mobile/'+src} media="(max-width: 480px)">
+        <source srcset={'/images/main/'+src} media="(min-width: 481px)">
+        <img src={'/images/main/'+src} class="hero-img">
+    </picture>
+    <div class="box limit-600">
+        <h1>Your Business Tag-Line Here.</h1>
+        <p class="p-large off-white">A couple sentences about your business. This should probably fill up about two lines of space.</p>
+        <div class="box across mobile-close">
+            <PrimaryButton text="Our Services" link="/services" />
+            <SecondaryButton text="Book an Appointment" link="/contact"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    .main {
+        position: relative;
+        width: 100%;
+        gap: 0px;
+        height: 100vh;
+        z-index: 0;
+        align-items: end;
+        justify-content: start;
+        padding: 48px;
+        color: white;
+    }
+
+    .hero-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        object-position: 50% 20%;
+        width: 100%;
+        object-fit:cover;
+    }
+
+    .bg-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 1;
+
+        &.down {
+            background-image: linear-gradient(to top, var(--dark-85), transparent 20%);
+        }
+        &.across {
+            background-image: linear-gradient(to right, hsla(0,0%,0%,70%), transparent 70%);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .bg-overlay.down {
+            background-image: none;
+            
+        }
+
+        .bg-overlay.across {
+            background-image: none;
+            background-color: hsla(0,0%,0%,50%);
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+        .main {
+            padding: 12px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }   
+    }
+</style>

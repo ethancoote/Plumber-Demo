@@ -1,0 +1,21 @@
+---
+const {icon,title,desc} = Astro.props;
+---
+
+<div class="box center card">
+    <img class="main-logo" src={icon} alt="service icon">
+    <h3>{title}</h3>
+    <p class="off-white">{desc}</p>
+</div>
+
+<style>
+    .card {
+        display: flex;
+        justify-content: start;
+        border: 1px solid var(--white-85);
+        border-radius: var(--radius);
+        padding: 24px;
+        gap: 16px;
+        height: auto;
+    }
+</style>

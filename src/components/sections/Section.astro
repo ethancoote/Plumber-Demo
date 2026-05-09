@@ -1,0 +1,28 @@
+---
+const {className = ""} = Astro.props;
+---
+<section class={className}>
+    <slot></slot>
+</section>
+
+<style>
+    section {
+        gap: 48px;
+        width: 100%;
+        padding: 64px 48px;
+        text-align: center;
+        justify-content: center;
+        max-width: 1500px;
+        align-items: center;
+    }
+
+    @media only screen and (max-width: 900px) {
+        section {
+            padding: 64px 12px;
+            flex-direction: column;
+        }
+        .mobile-flip {
+            flex-direction: column-reverse;
+        }
+    }
+</style>

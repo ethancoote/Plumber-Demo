@@ -1,6 +1,77 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Section from '../components/sections/Section.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import PrimaryButton from '../components/buttons/PrimaryButton.astro';
+import SecondaryButton from '../components/buttons/SecondaryButton.astro';
+import SmallButton from '../components/buttons/SmallButton.astro';
 ---
-<PageLayout title="Company Name">
-	<div><p>Hello</p></div>
+<PageLayout title="Business Name">
+	<Hero src="hero.webp"></Hero>
+	<div class="phone-button">
+        <SmallButton text="(+1) 123-456-7890" />
+    </div>
+	
+	<Section>
+		<div class="box center">
+			<img class="main-logo" src="/images/logo.svg">
+			<h2>Our Services</h2>
+			<p class="p-large off-white">Couple sentence overview of the services your business provides.</p>
+			<div class="box across grid-4">
+				<ServiceCard 
+					icon="/images/fridge.svg"
+					title="Kitchen Stack Cleaning"
+					desc="Vertical and horizontal stack systems in condo building require regular attention. Our system of cleaning and providing visual inspection reports for condos has proven to be a favorite among property managers."
+				/>
+				<ServiceCard 
+					icon="/images/sink.svg"
+					title="Plumbing Retrofits"
+					desc="Our company provides traditional plumbing and mechanical retrofits. Focusing on quality over quantity our team is capable of attending to plumbing calls, troubleshooting and repairs of all magnitudes."
+				/>
+				<ServiceCard 
+					icon="/images/pipe.svg"
+					title="Non Invasive Pipe Renewal"
+					desc="When your underground pipes begin to show signs of failure, Our company's services provide a trenchless and no-dig solution, structurally rehabilitating your horizontal or vertical sewer systems."
+				/>
+				<ServiceCard 
+					icon="/images/building.svg"
+					title="Commercial Properties"
+					desc="Our revolutionary systems can now manage daily, weekly and monthly water consumption, detect leaks and drain backups before they happen and communicate effectively to any smart device."
+				/>
+			</div>
+			<PrimaryButton text="More Info"></PrimaryButton>
+		</div>
+	</Section>
+	<div class="small-div"></div>
+	<Section>
+		
+		<div class="box start">
+			<h3 style="font-size:4rem; line-height: 4.5rem;">Why Customers Stick With Us.</h3>
+			<p>We know a plumbing problem never happens at a convenient time. That's why we offer flexible booking, including early mornings and Saturdays, so you're not forced to take a day off work just to get a leaky faucet fixed. We'll give you a two-hour arrival window; and we actually stick to it.</p>
+			<SecondaryButton text="Get In Touch" href="/contact"/>
+		</div>
+		<div class="box">
+			<picture>
+				<source srcset="/images/mobile/sink.webp" media="(max-width: 480px)">
+				<source srcset="/images/main/sink.webp" media="(mim-width: 481px)">
+				<img class="img-normal" src="/images/main/sink.webp" alt="plumbing">
+			</picture>
+		</div>
+	</Section>
+	<Section className="mobile-flip">
+		<div class="box">
+			<picture>
+				<source srcset="/images/mobile/wrench.webp" media="(max-width: 480px)">
+				<source srcset="/images/main/wrench.webp" media="(mim-width: 481px)">
+				<img class="img-square" src="/images/main/wrench.webp" alt="plumbing">
+			</picture>
+		</div>
+		<div class="box start">
+			<h3 style="font-size:4rem; line-height: 4.5rem;">We're the Neighbors You Call First.</h3>
+			<p class="p-large off-white">When you call us, you reach a licensed plumber who shows up on time, explains the problem in plain language, and gets it fixed without upselling you on things you don't need. Burst pipes, no hot water, sewage backup. We're on it day or night.</p>
+			
+		</div>
+	</Section>
+	
 </PageLayout>
