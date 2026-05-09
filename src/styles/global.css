@@ -3,6 +3,7 @@
     font-family: 'Manrope', sans-serif;
     font-weight: 300;
     transition: 0.2s;
+    box-sizing: border-box;
 }
 
 body {
@@ -18,7 +19,9 @@ body {
     --white-95: hsla(0, 0%, 100%, .95);
     --white-60: hsla(0, 0%, 100%, .6);
     --white-40: hsla(0, 0%, 100%, .4);
-    --dark-90: hsla(0, 0%, 0%, .9);
+
+    --dark-90: hsl(0, 0%, 10%);
+    --dark-70: hsl(0, 0%, 30%);
 
     --radius: 12px;
 }

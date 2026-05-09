@@ -1,14 +1,25 @@
 ---
-
+const {company} = Astro.props;
 ---
 
-<header>
+<header class="desktop-header">
     <nav class="desktop-nav">
         <a class="logo-wrap" href="/">
             <img class="logo" src="/images/logo.svg">
-            Company Name
+            {company}
         </a>
         <div class="divider-vert"></div>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+    </nav>
+</header>
+<div class="nav-button">
+    <img id="nav-open" src="/images/open.svg">
+</div>
+<header class="mobile-header">
+    <nav class="mobile-nav">
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/services">Services</a>
@@ -18,13 +29,23 @@
 
 <style>
     header {
-        margin-top: 16px;
-        width: fit-content;
-        height: fit-content;
-        background-color: var(--dark-90);
-        padding: 8px 12px;
-        border-radius: var(--radius);
         position: fixed;
+
+        &.desktop-header {
+            border: 1px solid var(--dark-70);
+            z-index: 10;
+            background-color: var(--dark-90);
+            padding: 8px 12px;
+            margin-top: 12px;
+            width: fit-content;
+            height: fit-content;
+            border-radius: var(--radius);
+        }
+        &.mobile-header {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
     }
     
     .desktop-nav {
@@ -34,7 +55,6 @@
         a {
             text-decoration: none;
             color: var(--white-95);
-            
             padding: 4px 12px;
             &:hover {
                 color: var(--white-60)
@@ -52,6 +72,23 @@
         }
     }
 
+    .mobile-nav {
+        opacity: 0;
+        background-color: var(--dark-90);
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 48px;
+        z-index = 10;
+        a {
+            text-decoration: none;
+            color: var(--white-95);
+            padding: 12px 12px;
+            font-size: 1.6rem;
+        }
+    }
+
     .divider-vert {
         background-color: var(--white-40);
         height: 90%;
@@ -63,5 +100,35 @@
         height: 28px;
     }
 
-    
+    .nav-button {
+        display: none;
+        background-color: var(--dark-90);
+        border-radius: 8px;
+        padding: 8px;
+        z-index: 11;
+        aspect-ratio: 1;
+        height: fit-content;
+        width: fit-content;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    @media only screen and (width < 900px) {
+        header.mobile-header {
+            display: flex;
+        }
+        header.desktop-header {
+            display: none;
+        }
+        .nav-button {
+            display: flex;
+        }
+    }
 </style>
+
+<script src="../scripts/nav.js"></script>
