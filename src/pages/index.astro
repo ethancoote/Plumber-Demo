@@ -6,6 +6,7 @@ import ServiceCard from '../components/ServiceCard.astro';
 import PrimaryButton from '../components/buttons/PrimaryButton.astro';
 import SecondaryButton from '../components/buttons/SecondaryButton.astro';
 import SmallButton from '../components/buttons/SmallButton.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
 ---
 <PageLayout title="Business Name">
 	<Hero src="hero.webp"></Hero>
@@ -73,5 +74,87 @@ import SmallButton from '../components/buttons/SmallButton.astro';
 			
 		</div>
 	</Section>
-	
+	<div class="small-div"></div>
+	<Section>
+		<div class="box center">
+			<img class="main-logo" src="/images/logo.svg">
+			<h2>Testimonials</h2>
+			<p class="p-large off-white">See what some of our happy customers had to say.</p>
+			<div class="box across grid-2">
+				<TestimonialCard 
+					name="Sandra Kowalski" 
+					title="These guys are the real deal."
+					desc="I had a pipe burst on a Sunday night and honestly expected to be on hold forever or wait until Monday. This company picked up immediately, had someone at my house within 90 minutes, and the repair was done before midnight. I couldn't believe it. These guys are the real deal."
+				/>
+				<TestimonialCard 
+					name="Raymond Chu" 
+					title="Honest pricing, reliable crew,"
+					desc="I've been a landlord for 15 years and I've worked with a lot of plumbers. Most of them either don't show up when they say they will, or they find a way to turn a $200 job into an $800 job. Honest pricing, reliable crew, and they treat my tenants with respect. That matters to me."
+				/>
+				<TestimonialCard 
+					name="Deirdre & Tom Flaherty" 
+					title="Wish we'd called them first."
+					desc="We had a slow drain in our kitchen that three other plumbers couldn't fully fix. These guys came out, figured out the actual problem in about 20 minutes, and it's been clear ever since. Wish we'd called them first."
+				/>
+				<TestimonialCard 
+					name="Marcus Oyelaran" 
+					title="Will absolutely use them again"
+					desc="They re-did all the plumbing in our bathroom renovation and were great to work with from start to finish — gave us clear timelines, flagged a potential issue behind the wall before it became a problem, and cleaned up spotless every day. Will absolutely use them again for our kitchen next year."
+				/>
+			</div>
+			<PrimaryButton text="Read More Reviews"></PrimaryButton>
+		</div>
+	</Section>
+	<div class="small-div"></div>
+	<Section className="mobile-flip">
+		<div class="box start">
+			<h3 style="font-size:3rem; line-height: 3.5rem;">About Us.</h3>
+			<p>Plumbing is one of those things people don't think about until something goes wrong. And when it does go wrong, it's usually stressful. Water where it shouldn't be, something that won't drain, a water heater that quit on the coldest morning of the year. We've built our reputation on being the calm in that chaos. 
+			</p>	
+			<p>The kind of tradespeople who answer the phone, explain what's happening without talking down to you, and get your home back to normal as quickly as possible.</p>
+			<SecondaryButton text="Book an Appointment" href="/contact"/>
+		</div>
+		<div class="box">
+			<picture>
+				<source srcset="/images/mobile/about.webp" media="(max-width: 480px)">
+				<source srcset="/images/main/about.webp" media="(mim-width: 481px)">
+				<img class="img-square" src="/images/main/about.webp" alt="plumbing">
+			</picture>
+		</div>
+	</Section>
+	<div class="small-div"></div>
+	<Section className="mobile-flip">
+		<div class="box start">
+			<h3>Book an Appointment.</h3>
+			<p class="off-white">Please reach out with a request to book an appointment. We will send you a confirmation email as soon as we can!</p>
+			<form class="box close">
+				<div class="box close">
+					<label for="name"><p>Your Name</p></label>
+					<input class="form-input" name="name" placeholder="John Smith" required>
+				</div>
+				<div class="box close">
+					<label for="email"><p>Email</p></label>
+					<input class="form-input" type="email" name="email" placeholder="johnsmith@company.ca" required>
+				</div>
+				<div class="box close">
+					<label for="message"><p>Message</p></label>
+					<textarea class="form-input" rows="6" cols="24" placeholder="Your Message"></textarea>
+				</div>
+				<button class="submit-button" type="submit">Submit</button>
+			</form>
+		</div>
+		<div class="box">
+			<TestimonialCard 
+					name="Deirdre & Tom Flaherty" 
+					title="Wish we'd called them first."
+					desc="We had a slow drain in our kitchen that three other plumbers couldn't fully fix. These guys came out, figured out the actual problem in about 20 minutes, and it's been clear ever since. Wish we'd called them first."
+				/>
+				<TestimonialCard 
+					name="Marcus Oyelaran" 
+					title="Will absolutely use them again"
+					desc="They re-did all the plumbing in our bathroom renovation and were great to work with from start to finish — gave us clear timelines, flagged a potential issue behind the wall before it became a problem, and cleaned up spotless every day. Will absolutely use them again for our kitchen next year."
+				/>
+		</div>
+
+	</Section>
 </PageLayout>

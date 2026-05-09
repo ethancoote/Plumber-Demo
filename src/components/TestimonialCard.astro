@@ -1,0 +1,28 @@
+---
+const {name,title,desc} = Astro.props;
+---
+
+<div class="box card">
+    
+    <h3>" {title} "</h3>
+    <p class="off-white">{desc}</p>
+    <div class="box across-true" style="align-items: center">
+        <img class="main-logo" src="/images/googleLogo.webp" alt="testimonial icon">
+        <p>- <i>{name}</i></p>
+    </div>
+    
+</div>
+
+<style>
+    .card {
+        display: flex;
+        text-align: start;
+        align-items: start;
+        justify-content: start;
+        border: 1px solid var(--white-85);
+        border-radius: var(--radius);
+        padding: 24px;
+        gap: 16px;
+        height: auto;
+    }
+</style>

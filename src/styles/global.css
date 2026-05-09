@@ -24,9 +24,11 @@ body {
     --white-60: hsla(0, 0%, 60%);
     --white-50: hsla(0, 0%, 50%);
     --white-40: hsla(0, 0%, 40%);
+    --white-20: hsla(0, 0%, 20%);
 
     --white-50-trans: hsla(0, 0%, 100%, .5);
 
+    --dark-93: hsl(0, 0%, 7%);
     --dark-90: hsl(0, 0%, 10%);
     --dark-85: hsl(0, 0%, 15%);
     --dark-80: hsl(0, 0%, 20%);
@@ -74,13 +76,17 @@ p {
 }
 
 .box {
-    z-index: 2;
+    z-index: 1;
     gap: 24px;
     flex-direction: column;
     width: 100%;
     height: fit-content;
 
     &.across {
+        flex-direction: row;
+    }
+
+    &.across-true { 
         flex-direction: row;
     }
 
@@ -94,11 +100,48 @@ p {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
+    &.grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     &.start {
         text-align: start;
     }
     &.closest {
         gap: 0px;
+    }
+    &.close {
+        gap: 8px;
+    }
+}
+
+.form-input {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--white-20);
+    background-color: var(--dark-93);
+    resize: none;
+    color: var(--white-95);
+}
+
+.submit-button {
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center;
+    border-radius: var(--radius);
+    border: 1px solid var(--white-85);
+    padding: 8px;
+    background-color: #0000;
+    color: var(--white-85);
+
+    &:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        box-shadow: 0px 6px 16px var(--white-50-trans);
     }
 }
 
@@ -174,6 +217,9 @@ b {
     .phone-button {
         top: 12px;
         left: 12px;
+    }
+    .box.grid-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
 
